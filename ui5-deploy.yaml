@@ -20,4 +20,4 @@ builder:
           name: ZSAMPLEDV2
           description: Sample DV2 ui5 application
           package: $tmp
-          transport: ""
+          transport: "DV2K904174"
