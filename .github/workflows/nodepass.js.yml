@@ -11,7 +11,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    environment: ABAP_USER
+    env:
+      ABAP_USER: ${{vars.ABAP_USER}}
+      ABAP_PASSWORD: ${{secrets.ABAP_PASSWORD}}
     strategy:
       matrix:
         node-version: [16.x]
@@ -24,5 +27,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Use variables
+      run: |
+        echo "repository variable : ${{ vars.ABAP_USER }}"
     - run: npm ci
     - run: echo "yes" | npm run deploy

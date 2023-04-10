@@ -16,6 +16,9 @@ builder:
         target:
           destination: DV2
           url: http://fgthana01.int-gcp.fulcrumgt.com:8005
+        credentials:
+          username: env:ABAP_USER
+          password: env:ABAP_PASSWORD
         app:
           name: ZSAMPLEDV2
           description: Sample DV2 ui5 application
