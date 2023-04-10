@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZPRS_DB_WORKLIST_01_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Dbdetail" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Draftbill"/>
+                    <PropertyRef Name="Lineitem"/>
+                </Key>
+                <Property Name="Actcode" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Activity Code Desc."/>
+                <Property Name="Tkemailid" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="Timekeeper Email ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phasecodek" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Phase"/>
+                <Property Name="Zzbelnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="CO Document Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="Zzbuzei" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="CO Line item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phasecode" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Phase Description"/>
+                <Property Name="Actcodek" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Activity Code"/>
+                <Property Name="Phasecodesetk" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Phase Set" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AhoursI" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Amended Hours Indicator" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Phasecodeset" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Phase Set Desc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AhoursQ" Type="Edm.Decimal" Precision="13" Scale="2" sap:unicode="false" sap:unit="AhoursUnit" sap:label="Amended Hours" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="AhoursS" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="Amended Hours - String" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="AhoursUnit" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Amended Hours Unit" sap:creatable="false" sap:updatable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="AmendhoursDisp" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Display Amended Hours" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Baserate" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Base Rate" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DisplayOnly" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Display Flag" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Draftbill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill"/>
+                <Property Name="Ffactcode" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="FF Act Code Desc"/>
+                <Property Name="Ffactcodek" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Flat Fee Act Code"/>
+                <Property Name="Fftaskcode" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Flat Fee Task Code"/>
+                <Property Name="Fftaskcodek" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Flat Fee Task Code"/>
+                <Property Name="HasComments" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Has Comments" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Itemcomments" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="Item Comments" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Lineitem" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Line Item"/>
+                <Property Name="Linetype" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Line Type - FEE or COST" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Matter" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Matter Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Matterk" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Matter" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Narrative" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="Narrative"/>
+                <Property Name="Netvalue" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Net Value" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Parentk" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Parent Node" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="2" sap:unicode="false" sap:unit="Qunit" sap:label="Hours/Quantity" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Qunit" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Hours/Quantity Unit" sap:creatable="false" sap:updatable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="RejReason" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="RejectionReason"/>
+                <Property Name="RejReasonText" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Rejection Reason Description"/>
+                <Property Name="Taskcode" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Task Code Desc."/>
+                <Property Name="Taskcodek" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Task Code"/>
+                <Property Name="Timekeeper" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Timekeeper Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Timekeeperk" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Timekeeper" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Workdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Work Date"/>
+                <Property Name="Workingoffice" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Workingofficek" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Writeupdown" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:unicode="false" sap:unit="Wrtdwncurr" sap:label="Write Up/Write Down" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Wrtdwncurr" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="WriteUp/WriteDown Currency" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <NavigationProperty Name="DbItemToDbComments" Relationship="ZPRS_DB_WORKLIST_01_SRV.DbItemToDbComments" FromRole="FromRole_DbItemToDbComments" ToRole="ToRole_DbItemToDbComments"/>
+            </EntityType>
+            <EntityType Name="AuditTrail" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Draftbill"/>
+                    <PropertyRef Name="Posnr"/>
+                    <PropertyRef Name="Createts"/>
+                </Key>
+                <Property Name="Delegatedfrom" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Delegatedto" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Delegated To" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Delegatedfromk" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Draftbill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Document" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Delegatedtok" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Delegated to User" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Posnr" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Createts" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="CREATETS" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Delegatedbyk" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Delegated by User" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Delegatedby" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Delegated By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="TotDuration" Type="Edm.String" Nullable="false" MaxLength="17" sap:unicode="false" sap:label="Total Time" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Agentname" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Agent" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Begindate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created on" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Enddate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created on" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Duration" Type="Edm.String" Nullable="false" MaxLength="17" sap:unicode="false" sap:label="Total Time" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Character 100" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="Clientgroup" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Parentk"/>
+                    <PropertyRef Name="Parentnodetype"/>
+                </Key>
+                <Property Name="Count" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Count" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filterby" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Filter By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parentk" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Parent Node"/>
+                <Property Name="Parent" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Parent Node"/>
+                <Property Name="Parentnodetype" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Node Type" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="Dbheader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Draftbill"/>
+                </Key>
+                <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="User Action" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billingoffice" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Billing Office Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billingofficek" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Billing Office" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Client" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Client Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Clientk" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Count" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Draftbill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill" sap:sortable="false"/>
+                <Property Name="Draftbillstatus" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Draft Bill Status" sap:sortable="false"/>
+                <Property Name="Draftbillstatusk" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill Status" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Drilldownstate" Type="Edm.String" Nullable="false" MaxLength="1024" sap:hierarchy-drill-state-for="Id" sap:unicode="false" sap:label="Drilldown State" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Error" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Boolean" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filterby" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Filter By" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="12" sap:hierarchy-node-for="Id" sap:unicode="false" sap:label="Hierarchy ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Level" Type="Edm.String" Nullable="false" MaxLength="10" sap:hierarchy-level-for="Id" sap:unicode="false" sap:label="Hierarchy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matter" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Matter Name" sap:sortable="false"/>
+                <Property Name="Mattergroup" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mattergroupk" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:sortable="false"/>
+                <Property Name="Matterk" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Matter" sap:sortable="false"/>
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="String - Case Sensitive" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parent" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Parent Node" sap:sortable="false"/>
+                <Property Name="Parentk" Type="Edm.String" Nullable="false" MaxLength="12" sap:hierarchy-parent-node-for="Id" sap:unicode="false" sap:label="Parent Node" sap:sortable="false"/>
+                <Property Name="Parentkmap" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parentnodetype" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Node Type" sap:sortable="false"/>
+                <Property Name="Permittedaction" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="Permitted Actions" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prevreviewed" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Previously Reviewed" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prevreviewedk" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Previously Reviewed" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Current Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Searchterm" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="String - Case Sensitive" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Total" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Net Value" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Wiid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zzclntgrp" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Client Group" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <NavigationProperty Name="Itemheader" Relationship="ZPRS_DB_WORKLIST_01_SRV.Itemheader" FromRole="FromRole_Itemheader" ToRole="ToRole_Itemheader"/>
+                <NavigationProperty Name="Itemdetail" Relationship="ZPRS_DB_WORKLIST_01_SRV.Itemdetail" FromRole="FromRole_Itemdetail" ToRole="ToRole_Itemdetail"/>
+                <NavigationProperty Name="DbheaderToAdditionalDetails" Relationship="ZPRS_DB_WORKLIST_01_SRV.DbheaderToAdditionalDetails" FromRole="FromRole_DbheaderToAdditionalDetails" ToRole="ToRole_DbheaderToAdditionalDetails"/>
+                <NavigationProperty Name="DbHeaderToAuditTrail" Relationship="ZPRS_DB_WORKLIST_01_SRV.DbHeaderToAuditTrail" FromRole="FromRole_DbHeaderToAuditTrail" ToRole="ToRole_DbHeaderToAuditTrail"/>
+                <NavigationProperty Name="DbHeaderToDbComments" Relationship="ZPRS_DB_WORKLIST_01_SRV.DbHeaderToDbComments" FromRole="FromRole_DbHeaderToDbComments" ToRole="ToRole_DbHeaderToDbComments"/>
+                <NavigationProperty Name="DbHeaderToDbAttachments" Relationship="ZPRS_DB_WORKLIST_01_SRV.DbHeaderToDbAttachments" FromRole="FromRole_DbHeaderToDbAttachments" ToRole="ToRole_DbHeaderToDbAttachments"/>
+                <NavigationProperty Name="DbheaderToBillingInstructions" Relationship="ZPRS_DB_WORKLIST_01_SRV.DbheaderToBillingInstructions" FromRole="FromRole_DbheaderToBillingInstructions" ToRole="ToRole_DbheaderToBillingInstructions"/>
+                <NavigationProperty Name="Expandhierarchy" Relationship="ZPRS_DB_WORKLIST_01_SRV.Expandhierarchy" FromRole="FromRole_Expandhierarchy" ToRole="ToRole_Expandhierarchy"/>
+                <NavigationProperty Name="DbToAdditionalWip" Relationship="ZPRS_DB_WORKLIST_01_SRV.DbToAdditionalWip" FromRole="FromRole_DbToAdditionalWip" ToRole="ToRole_DbToAdditionalWip"/>
+            </EntityType>
+            <EntityType Name="Dbheaderfordetail" sap:label="Further Selection" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Draftbill"/>
+                </Key>
+                <Property Name="AttachCt" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Count for Attachments" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Hierarchy ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HdrcmtCt" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Count for Header Comments" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parentk" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Parent Node" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Current Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parent" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Parent Node" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Permittedaction" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="Permitted Actions" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parentnodetype" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Node Type" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Draftbill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Matterk" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Matter" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matter" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Matter Name" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Draftbillstatusk" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill Status" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Draftbillstatus" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Draft Bill Status" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Clientk" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Client" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Client" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Client Name" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mattercategoryk" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Matter Category" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mattercategory" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Matter Category" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prevreviewerk" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="Previous Reviewer" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prevreviewer" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Previous Reviewer" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billingpartnerk" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Billing Partner" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billingpartner" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Billing Partner Name" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billingofficek" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Billing Office" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billingoffice" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Billing Office Name" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Feevalue" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Fee Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Softvalue" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="SC Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hardcostvalue" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="HC Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="AdditionalDetails" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Draftbill"/>
+                </Key>
+                <Property Name="Draftbill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PrPercent" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="Contribution Margin" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PrFcost" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Fee Earner Cost" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PrAmount" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Profit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MbillUnappliedcash" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="MbillCurrency" sap:label="Unapplied Cash" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MbillUnallocated" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="MbillCurrency" sap:label="Unallocated Interim Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MbillTrust" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="MbillCurrency" sap:label="Trust" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MbillRetainer" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="MbillCurrency" sap:label="Retainer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MbillFeesbilled" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="MbillCurrency" sap:label="Total Fees Billed" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MbillCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Billing Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="MbillCostbilled" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="MbillCurrency" sap:label="Total Cost Billed" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MbillCappedFee" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="MbillCurrency" sap:label="Capped Fee Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InvWrtup" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Write Up/Write Down" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InvTax" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Tax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InvSc" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Soft Cost" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InvNetvalue" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Net Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InvHc" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Hard Cost" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InvFees" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Fees" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InvDiscount" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Discount/Surcharge" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InvCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Invoice Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="HdrcmtCt" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Header Comment Count" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BudTypeText" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BudType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Budget Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BudTotal" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="BudCurrency" sap:label="Agreed Budget Total" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BudFees" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="BudCurrency" sap:label="Agreed Budget Fees" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BudCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Budget Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="BudCost" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="BudCurrency" sap:label="Agreed Budget Costs" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BillingInst" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="BILLING_INST" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AwTotal" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Total" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AwSc" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Soft Cost" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AwHc" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Hard Cost" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AwFee" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="InvCurrency" sap:label="Fee" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AttachCt" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Attachment Count" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Additionalwip" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Char01" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Roleaction" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Action"/>
+                    <PropertyRef Name="Role"/>
+                </Key>
+                <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="User Action" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Current Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DecisionKey" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Index" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UpdateWi" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Boolean" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DecisionText" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Alternative" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ActionText" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InconIndicator" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="DbComments" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Commentseq"/>
+                    <PropertyRef Name="Draftbill"/>
+                    <PropertyRef Name="Lineitem"/>
+                </Key>
+                <Property Name="Commentseq" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Not used" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Draftbill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill" sap:sortable="false"/>
+                <Property Name="Area" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Application Area" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lineitem" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="LineItem" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itemcomments" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="Comments" sap:sortable="false"/>
+                <Property Name="Roleid" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="User Role" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User ID" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Timestamp" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Time Stamp" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Role Description" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="User Name" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="PrintDraftbill" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DraftBill"/>
+                </Key>
+                <Property Name="Kschl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DraftBill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MimeType" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kappl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="DbAttachments" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Draftbill"/>
+                    <PropertyRef Name="Objkey"/>
+                    <PropertyRef Name="LoioId"/>
+                </Key>
+                <Property Name="Draftbill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="SD Document" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Objkey" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Object key" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LoioId" Type="Edm.String" Nullable="false" MaxLength="42" sap:unicode="false" sap:label="Document ID" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fname" Type="Edm.String" Nullable="false" MaxLength="64" sap:unicode="false" sap:label="Description" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreaUser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreaTime" Type="Edm.String" Nullable="false" MaxLength="19" sap:unicode="false" sap:label="Time Created" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Docuclass" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Attribute feature (mid-length version)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CrDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Current Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Xstring" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="Xstring" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Error" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Boolean" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreaUsername" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Offlinekey" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Offline Key" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="BillingInstructions" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Draftbill"/>
+                </Key>
+                <Property Name="Draftbill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BillingInst" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="BILLING_INST" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Totaldraft" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Count"/>
+                    <PropertyRef Name="Vbeln"/>
+                </Key>
+                <Property Name="Count" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:sortable="false"/>
+                <Property Name="Vbeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="TaskCode" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskcodek"/>
+                    <PropertyRef Name="Matterk"/>
+                    <PropertyRef Name="Startdate"/>
+                    <PropertyRef Name="Enddate"/>
+                </Key>
+                <Property Name="Taskcodek" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Task Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskcode" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Task Code Desc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matterk" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Matter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phase" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Phase" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Startdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Enddate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="FFActCode" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ffactcodek"/>
+                    <PropertyRef Name="Fftaskcodek"/>
+                    <PropertyRef Name="Matterk"/>
+                </Key>
+                <Property Name="Ffactcodek" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Flat Fee Act Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ffactcode" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="FF Act Code Desc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fftaskcodek" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Flat Fee Task Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matterk" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Matter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="FFTaskCode" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Fftaskcodek"/>
+                    <PropertyRef Name="Matterk"/>
+                </Key>
+                <Property Name="Fftaskcodek" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Flat Fee Task Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fftaskcode" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Flat Fee Task Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matterk" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Matter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ActCode" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Actcodek"/>
+                    <PropertyRef Name="Matterk"/>
+                    <PropertyRef Name="Startdate"/>
+                    <PropertyRef Name="Enddate"/>
+                </Key>
+                <Property Name="Actcodek" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Activity Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Actcode" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Activity Code Desc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matterk" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Matter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Startdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Enddate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="PhaseCode" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Phasecodek"/>
+                    <PropertyRef Name="Phasecodesetk"/>
+                    <PropertyRef Name="Matterk"/>
+                    <PropertyRef Name="Startdate"/>
+                    <PropertyRef Name="Enddate"/>
+                </Key>
+                <Property Name="Phasecodek" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Phase" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phasecode" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Phase Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phasecodesetk" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Phase Set" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phasecodeset" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Phase Set Desc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matterk" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Matter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Startdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Enddate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="DbDashboard" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Uname"/>
+                </Key>
+                <Property Name="Reviewcount" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Review Count" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Approvecount" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Approve Count" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Totalamount" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="Total Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Audit01" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Draft"/>
+                    <PropertyRef Name="Seq"/>
+                </Key>
+                <Property Name="Draft" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Seq" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotDuration" Type="Edm.String" MaxLength="17" sap:unicode="false" sap:label="Total Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Agentname" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Agent" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Begindate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created on" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Enddate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created on" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Duration" Type="Edm.String" MaxLength="17" sap:unicode="false" sap:label="Total Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Character 100" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Delegatedto" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Delegatedtok" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Delegatedbyk" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Delegatedby" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Delegatedfrom" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Delegatedfromk" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="AddlReviewer" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Wiid"/>
+                    <PropertyRef Name="Vbeln"/>
+                    <PropertyRef Name="Reviewer"/>
+                    <PropertyRef Name="Areviewerk"/>
+                    <PropertyRef Name="Areviewer"/>
+                    <PropertyRef Name="Role"/>
+                    <PropertyRef Name="Arcounter"/>
+                </Key>
+                <Property Name="Wiid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Work Item ID"/>
+                <Property Name="Vbeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Document"/>
+                <Property Name="Reviewer" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Agent ID"/>
+                <Property Name="Areviewerk" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Additional Reviewer"/>
+                <Property Name="Areviewer" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Additional Reviewer"/>
+                <Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Current Agent"/>
+                <Property Name="Arcounter" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Dummy"/>
+            </EntityType>
+            <EntityType Name="AdditionalWip" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Buzei"/>
+                    <PropertyRef Name="Tdid"/>
+                    <PropertyRef Name="Belnr"/>
+                    <PropertyRef Name="Tdobject"/>
+                    <PropertyRef Name="Pspid"/>
+                    <PropertyRef Name="Tdname"/>
+                </Key>
+                <Property Name="Bldat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Document Date" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Budat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Posting Date" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Cpudt" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Entered On" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Megbtr" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="2" sap:unicode="false" sap:unit="Meinh" sap:label="Hours/Quantity" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LstarText" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="String - Case Sensitive" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Blart" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Document Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Buzei" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Line item" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Meinh" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Company Code" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Tdid" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Text ID" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Office" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Zzwerks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Working Office" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Awtyp" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Ref. procedure" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Twaer" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Trans. Currency" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="Lstar" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Activity Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel No." sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Belnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Document Number" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Db" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Error" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Tdobject" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Text object" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Zzactcd" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Activity Code" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Zztskcd" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Task Code" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Character Field of Length 12" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Name of EE SG" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Zzffactcd" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Flat Fee Activity Cd" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Zzfftskcd" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Flat Fee Code" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Project def." sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PsPosid" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="WBS element" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Sname" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Empl./appl.name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Tdname" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Text Name" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="NarrativeString" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:label="String - Case Sensitive" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="GroupBill" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Draftbill"/>
+                </Key>
+                <Property Name="Agentid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Agent" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Agentname" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Agent Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Invoice Currency" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                <Property Name="Discount" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Discount" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Draftbill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Draft Bill" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Fees" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Fees" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Groupbillid" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Group Billing ID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Hardcost" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Hard Cost" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Hierarchy ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matter" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Matter Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Matterk" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Matter" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Ocharges" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Other Charges" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Sdraftbill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Source Draft Bill" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Softcost" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Soft Cost" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Tax" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Tax" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Totalamt" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Total Amount" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Wfstatus" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Workflow Status" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Writeupdwn" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="Write Up/Down" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="PrintGroupbill" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DraftBill"/>
+                </Key>
+                <Property Name="DraftBill" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MimeType" Type="Edm.String" Nullable="false" MaxLength="1024" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="DbheaderToBillingInstructions" sap:content-version="1">
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheader" Multiplicity="1" Role="FromRole_DbheaderToBillingInstructions"/>
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.BillingInstructions" Multiplicity="0..1" Role="ToRole_DbheaderToBillingInstructions"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DbheaderToBillingInstructions">
+                        <PropertyRef Name="Draftbill"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DbheaderToBillingInstructions">
+                        <PropertyRef Name="Draftbill"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DbHeaderToDbAttachments" sap:content-version="1">
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheader" Multiplicity="1" Role="FromRole_DbHeaderToDbAttachments"/>
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.DbAttachments" Multiplicity="*" Role="ToRole_DbHeaderToDbAttachments"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DbHeaderToDbAttachments">
+                        <PropertyRef Name="Draftbill"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DbHeaderToDbAttachments">
+                        <PropertyRef Name="Draftbill"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DbHeaderToDbComments" sap:content-version="1">
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheader" Multiplicity="1" Role="FromRole_DbHeaderToDbComments"/>
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.DbComments" Multiplicity="*" Role="ToRole_DbHeaderToDbComments"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DbHeaderToDbComments">
+                        <PropertyRef Name="Draftbill"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DbHeaderToDbComments">
+                        <PropertyRef Name="Draftbill"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Expandhierarchy" sap:content-version="1">
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheader" Multiplicity="1" Role="FromRole_Expandhierarchy"/>
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheader" Multiplicity="*" Role="ToRole_Expandhierarchy"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Expandhierarchy">
+                        <PropertyRef Name="Draftbill"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Expandhierarchy">
+                        <PropertyRef Name="Draftbill"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Itemdetail" sap:content-version="1">
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheader" Multiplicity="1" Role="FromRole_Itemdetail"/>
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbdetail" Multiplicity="*" Role="ToRole_Itemdetail"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Itemdetail">
+                        <PropertyRef Name="Draftbill"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Itemdetail">
+                        <PropertyRef Name="Draftbill"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Itemheader" sap:content-version="1">
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheader" Multiplicity="1" Role="FromRole_Itemheader"/>
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheaderfordetail" Multiplicity="1" Role="ToRole_Itemheader"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Itemheader">
+                        <PropertyRef Name="Draftbill"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Itemheader">
+                        <PropertyRef Name="Draftbill"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DbToAdditionalWip" sap:content-version="1">
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheader" Multiplicity="1" Role="FromRole_DbToAdditionalWip"/>
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.AdditionalWip" Multiplicity="*" Role="ToRole_DbToAdditionalWip"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DbToAdditionalWip">
+                        <PropertyRef Name="Draftbill"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DbToAdditionalWip">
+                        <PropertyRef Name="Db"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DbheaderToAdditionalDetails" sap:content-version="1">
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheader" Multiplicity="1" Role="FromRole_DbheaderToAdditionalDetails"/>
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.AdditionalDetails" Multiplicity="1" Role="ToRole_DbheaderToAdditionalDetails"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DbheaderToAdditionalDetails">
+                        <PropertyRef Name="Draftbill"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DbheaderToAdditionalDetails">
+                        <PropertyRef Name="Draftbill"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DbHeaderToAuditTrail" sap:content-version="1">
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbheader" Multiplicity="0..1" Role="FromRole_DbHeaderToAuditTrail"/>
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.AuditTrail" Multiplicity="*" Role="ToRole_DbHeaderToAuditTrail"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DbHeaderToAuditTrail">
+                        <PropertyRef Name="Draftbill"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DbHeaderToAuditTrail">
+                        <PropertyRef Name="Draftbill"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="DbItemToDbComments" sap:content-version="1">
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.Dbdetail" Multiplicity="1" Role="FromRole_DbItemToDbComments"/>
+                <End Type="ZPRS_DB_WORKLIST_01_SRV.DbComments" Multiplicity="*" Role="ToRole_DbItemToDbComments"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_DbItemToDbComments">
+                        <PropertyRef Name="Draftbill"/>
+                    </Principal>
+                    <Dependent Role="ToRole_DbItemToDbComments">
+                        <PropertyRef Name="Draftbill"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZPRS_DB_WORKLIST_01_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="Dbdetails" EntityType="ZPRS_DB_WORKLIST_01_SRV.Dbdetail" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AuditTrailSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.AuditTrail" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Clientgroups" EntityType="ZPRS_DB_WORKLIST_01_SRV.Clientgroup" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Dbheaders" EntityType="ZPRS_DB_WORKLIST_01_SRV.Dbheader" sap:label="Client/Matter Selection" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Dbheaderfordetails" EntityType="ZPRS_DB_WORKLIST_01_SRV.Dbheaderfordetail" sap:label="Further Selection" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AdditionalDetailsSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.AdditionalDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Roleactionlist" EntityType="ZPRS_DB_WORKLIST_01_SRV.Roleaction" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="DbCommentsSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.DbComments" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PrintDraftbillCollection" EntityType="ZPRS_DB_WORKLIST_01_SRV.PrintDraftbill" sap:content-version="1"/>
+                <EntitySet Name="DbAttachmentsSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.DbAttachments" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="BillingInstructionsSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.BillingInstructions" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Totaldrafts" EntityType="ZPRS_DB_WORKLIST_01_SRV.Totaldraft" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="TaskCodeSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.TaskCode" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FFActCodeSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.FFActCode" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FFTaskCodeSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.FFTaskCode" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ActCodeSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.ActCode" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PhaseCodeSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.PhaseCode" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="DbDashboards" EntityType="ZPRS_DB_WORKLIST_01_SRV.DbDashboard" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Audit01Set" EntityType="ZPRS_DB_WORKLIST_01_SRV.Audit01" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AddlReviewerSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.AddlReviewer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AdditionalWipSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.AdditionalWip" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="GroupBillSet" EntityType="ZPRS_DB_WORKLIST_01_SRV.GroupBill" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PrintGroupbillCollection" EntityType="ZPRS_DB_WORKLIST_01_SRV.PrintGroupbill" sap:content-version="1"/>
+                <AssociationSet Name="DbHeaderToDbAttachmentsSet" Association="ZPRS_DB_WORKLIST_01_SRV.DbHeaderToDbAttachments" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Dbheaders" Role="FromRole_DbHeaderToDbAttachments"/>
+                    <End EntitySet="DbAttachmentsSet" Role="ToRole_DbHeaderToDbAttachments"/>
+                </AssociationSet>
+                <AssociationSet Name="DbToAdditionalWipSet" Association="ZPRS_DB_WORKLIST_01_SRV.DbToAdditionalWip" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Dbheaders" Role="FromRole_DbToAdditionalWip"/>
+                    <End EntitySet="AdditionalWipSet" Role="ToRole_DbToAdditionalWip"/>
+                </AssociationSet>
+                <AssociationSet Name="DbHeaderToAuditTrailSet" Association="ZPRS_DB_WORKLIST_01_SRV.DbHeaderToAuditTrail" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Dbheaders" Role="FromRole_DbHeaderToAuditTrail"/>
+                    <End EntitySet="AuditTrailSet" Role="ToRole_DbHeaderToAuditTrail"/>
+                </AssociationSet>
+                <AssociationSet Name="DbItemToDbCommentsSet" Association="ZPRS_DB_WORKLIST_01_SRV.DbItemToDbComments" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Dbdetails" Role="FromRole_DbItemToDbComments"/>
+                    <End EntitySet="DbCommentsSet" Role="ToRole_DbItemToDbComments"/>
+                </AssociationSet>
+                <AssociationSet Name="ExpandhierarchySet" Association="ZPRS_DB_WORKLIST_01_SRV.Expandhierarchy" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Dbheaders" Role="FromRole_Expandhierarchy"/>
+                    <End EntitySet="Dbheaders" Role="ToRole_Expandhierarchy"/>
+                </AssociationSet>
+                <AssociationSet Name="DbHeaderToDbCommentsSet" Association="ZPRS_DB_WORKLIST_01_SRV.DbHeaderToDbComments" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Dbheaders" Role="FromRole_DbHeaderToDbComments"/>
+                    <End EntitySet="DbCommentsSet" Role="ToRole_DbHeaderToDbComments"/>
+                </AssociationSet>
+                <AssociationSet Name="Itemheaders" Association="ZPRS_DB_WORKLIST_01_SRV.Itemheader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Dbheaders" Role="FromRole_Itemheader"/>
+                    <End EntitySet="Dbheaderfordetails" Role="ToRole_Itemheader"/>
+                </AssociationSet>
+                <AssociationSet Name="DbheaderToBillingInstructionsSet" Association="ZPRS_DB_WORKLIST_01_SRV.DbheaderToBillingInstructions" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Dbheaders" Role="FromRole_DbheaderToBillingInstructions"/>
+                    <End EntitySet="BillingInstructionsSet" Role="ToRole_DbheaderToBillingInstructions"/>
+                </AssociationSet>
+                <AssociationSet Name="DbheaderToAdditionalDetailsSet" Association="ZPRS_DB_WORKLIST_01_SRV.DbheaderToAdditionalDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Dbheaders" Role="FromRole_DbheaderToAdditionalDetails"/>
+                    <End EntitySet="AdditionalDetailsSet" Role="ToRole_DbheaderToAdditionalDetails"/>
+                </AssociationSet>
+                <AssociationSet Name="Itemdetails" Association="ZPRS_DB_WORKLIST_01_SRV.Itemdetail" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Dbheaders" Role="FromRole_Itemdetail"/>
+                    <End EntitySet="Dbdetails" Role="ToRole_Itemdetail"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://fgthana01.int-gcp.fulcrumgt.com:8005/sap/opu/odata/sap/ZPRS_DB_WORKLIST_01_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://fgthana01.int-gcp.fulcrumgt.com:8005/sap/opu/odata/sap/ZPRS_DB_WORKLIST_01_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

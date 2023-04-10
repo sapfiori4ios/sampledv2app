@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.6"
+metadata:
+  name: com.sample.sampledvapp
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: DV2
+          url: http://fgthana01.int-gcp.fulcrumgt.com:8005
+        app:
+          name: ZSAMPLEDV2
+          description: Sample DV2 ui5 application
+          package: $tmp
+          transport: ""
